@@ -5,6 +5,7 @@ import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import TabContext from "@mui/lab/TabContext";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import List from "../List";
 import Grid from "../Grid";
 
 function DashboardWrapper({ data }) {
@@ -51,7 +52,13 @@ function DashboardWrapper({ data }) {
             ))}
           </div>
         </TabPanel>
-        <TabPanel value={1}>list</TabPanel>
+        <TabPanel value={1}>
+            <table className="list-table">
+              {data.map((coin, i) => (
+                <List coin={coin} key={i} />
+              ))}
+            </table>
+          </TabPanel>
       </TabContext>
       </ThemeProvider>
     </div>

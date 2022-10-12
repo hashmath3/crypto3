@@ -6,9 +6,11 @@ import "./styles.css";
 function Header() {
   return (
     <div className="navbar">
+      <a href="/">
       <h1 className="heading">
         CryptoTracker<span style={{ color: "var(--blue)" }}>.</span>
       </h1>
+      </a>
       <div className="links-flex">
         <a href="/">
           <p className="links">Home</p>

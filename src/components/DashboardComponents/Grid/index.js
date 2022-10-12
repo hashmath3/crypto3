@@ -3,7 +3,7 @@ import "./styles.css";
 import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUpRounded";
 import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
 
-//todo: responsive + graphs + data points
+//todo:  graphs  + pagination + add this component to the home page
 
 function Grid({ coin }) {
   return (
@@ -27,17 +27,37 @@ function Grid({ coin }) {
             >
               {"+" + coin.price_change_percentage_24h.toFixed(2) + " %"}
             </div>
-            <TrendingUpRoundedIcon className="trending-icon" fontSize="2rem" />
+            <TrendingUpRoundedIcon
+              className="trending-icon"
+              fontSize="2.5rem"
+            />
           </div>
         ) : (
           <div className="chip-flex">
             <div className="chip red">
               {coin.price_change_percentage_24h.toFixed(2) + " %"}
             </div>
-            <TrendingDownRoundedIcon className="trending-icon red" fontSize="2rem"/>
+            <TrendingDownRoundedIcon
+              className="trending-icon red"
+              fontSize="2.5rem"
+            />
           </div>
         )}
-     
+        {coin.price_change_percentage_24h > 0 ? (
+          <p className="price">${coin.current_price.toLocaleString()}</p>
+        ) : (
+          <p className="price price-red">
+            ${coin.current_price.toLocaleString()}
+          </p>
+        )}
+        <p className="name">
+          <span className="sub-heading">Total Volume : </span>$
+          {coin.total_volume.toLocaleString()}
+        </p>
+        <p className="name">
+          <span className="sub-heading">Market Cap : </span> $
+          {coin.market_cap.toLocaleString()}
+        </p>
       </div>
     </div>
   );
