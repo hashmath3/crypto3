@@ -34,6 +34,7 @@ function List({ coin }) {
   }, [volume]);
 
   return (
+    <a href={`/coin?${coin.id}`}>
     <tr className="list-wrapper">
       <td className="image-td">
         <img src={coin.image} className="list-logo" />
@@ -88,6 +89,7 @@ function List({ coin }) {
         ${coin.market_cap.toLocaleString()}
       </td>
     </tr>
+    </a>
   );
 }
 

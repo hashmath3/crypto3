@@ -7,7 +7,10 @@ import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
 
 function Grid({ coin }) {
   return (
+  
+   
     <div className="coin-box">
+        <a href={`/coin?${coin.id}`}>
       <div className="logo-div">
         <img src={coin.image} className="logo" />
         <div className="coin-info">
@@ -44,7 +47,7 @@ function Grid({ coin }) {
           </div>
         )}
         {coin.price_change_percentage_24h > 0 ? (
-          <p className="price">${coin.current_price.toLocaleString()}</p>
+          <p className="price price-green">${coin.current_price.toLocaleString()}</p>
         ) : (
           <p className="price price-red">
             ${coin.current_price.toLocaleString()}
@@ -59,7 +62,11 @@ function Grid({ coin }) {
           {coin.market_cap.toLocaleString()}
         </p>
       </div>
+      </a>
     </div>
+  
+    
+  
   );
 }
 

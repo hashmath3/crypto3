@@ -2,13 +2,33 @@
   background-color: var(--darkgrey);
   width: 300px;
   height: 300px;
-  border-radius: 1rem;
+  border-radius: 2.5rem;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
   padding: 2rem;
   cursor: pointer;
+  transition: transfrom 500ms ease;
+}
+.coin-box:hover{
+  box-shadow: 4px 4px 15px#18978F;
+  transition: all 0.3s ;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.coin-box:hover::before{
+  content: '';
+  position:absolute;
+
+  z-index: -1;
+}
+
+.coin-box:hover::after{
+
+  content: '';
+  box-sizing: 1rem;
+  color: blueviolet;
 }
 
 .logo-div {
@@ -16,11 +36,22 @@
   width: 100%;
   justify-content: flex-start;
   align-items: flex-start;
+
 }
 
 .logo {
   width: 20%;
   margin-right: 1rem;
+  animation-name: floating;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+
+}
+@keyframes floating {
+  from { transform: translate(0,  0px); }
+  65%  { transform: translate(0, 10px); }
+  to   { transform: translate(0, -0px); }    
 }
 
 .symbol {
@@ -29,6 +60,23 @@
   margin-bottom: 0px;
   margin-top: 0px;
   text-transform: uppercase;
+  transition: 0.5s;
+  text-shadow: 1px 1px 1px #919191,
+  1px 2px 1px #919191,
+  
+
+
+ 
+1px 18px 6px rgba(16,16,16,0.4),
+1px 22px 10px rgba(16,16,16,0.2),
+1px 25px 35px rgba(16,16,16,0.2),
+1px 30px 60px rgba(16,16,16,0.4);
+}
+.symbol::after{
+
+}
+.coin-box:hover .symbol::after{
+  transform: scaleX(1);
 }
 
 .name {
@@ -88,6 +136,58 @@
   font-size: 1.2rem;
   color: var(--green);
   margin-top: 0;
+  position: relative;
+
+}
+.price::after{
+  content: "";
+  position: absolute;
+  /* height: 2px;
+  left: 0;
+  bottom: 0;
+
+  width: 100%; */
+  display: inline-block;
+  width: 150px;
+  height: 29px;
+  -moz-border-radius: 7.5px;
+  -webkit-border-radius: 7.5px;
+  border-radius: 7.5px;
+color: var(--white);
+z-index: -1;
+left: 0;
+   background-color: rgb(29, 119, 29); 
+  transform: scaleX(0);
+  
+}
+.price-red::after{
+  content: "";
+  position: absolute;
+  /* height: 2px;
+  left: 0;
+  bottom: 0;
+  
+
+  width: 50%; */
+  left: 0;
+  display: inline-block;
+  width: 150px;
+  height: 29px;
+  -moz-border-radius: 7.5px;
+  -webkit-border-radius: 7.5px;
+  border-radius: 7.5px;
+color: var(--white);
+z-index: -1;
+
+  background-color: rgb(77, 45, 45); 
+  transform: scaleX(0);
+  
+}
+.coin-box:hover .price::after{
+  transform: scaleX(1);
+}
+.coin-box:hover .price-red::after{
+  transform: scaleX(1);
 }
 
 .price-red {
