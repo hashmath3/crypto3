@@ -19,7 +19,7 @@ function Header() {
         <a href="/">
           <p className="links">Home</p>
         </a>
-        <a href="#card-news">
+        <a href="/#card-news">
           <p className="links">Crypto News</p>
         </a>
         <a href="/about-us">

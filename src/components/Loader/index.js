@@ -4,7 +4,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 function Loader() {
   return (
     <div className="loader-wrapper">
-      <CircularProgress />
+      <CircularProgress style={{'color': '#18978F'}}/>
     </div>
   );
 }
