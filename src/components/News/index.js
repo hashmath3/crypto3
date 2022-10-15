@@ -13,7 +13,7 @@ const News = () => {
 
 
   useEffect(() => {
-    axios.get("https://newsapi.org/v2/everything?q=bitcoin&apiKey=b4ad662a7be24aa884b41708e5b1916b")
+    axios.get("https://newsapi.org/v2/everything?q=bitcoin&apiKey=b4ad662a7be24aa884b41708e5b1916b", { crossDomain: true })
     .then((response)=>{
         console.log(response);
         setnews(response.data.articles)
