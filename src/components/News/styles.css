@@ -1,0 +1,93 @@
+.container-card{
+    padding-right: 70px;
+}
+
+.cards
+{
+    display: flex;
+ 
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    margin-left: 90px;
+   
+    width: 90%;
+    height: 560px;
+}
+
+.card{
+    background-color: #ecf0f1;
+    color: #121212;
+
+    border-radius: 2rem;
+   
+    padding: 2rem;
+    transition: 0.2s;
+    box-shadow: 2px 2px 8px 2px rgba(0,0,0,0.75);
+   
+}
+
+.card:not(:first-child){
+    margin-left: -4rem;
+  
+}
+
+.card:hover{
+  
+    transform: translate(-2rem);
+}
+.card:hover
+   ~ .card , .card:focus-within ~ .card{
+  transform: translateX(4rem);
+   }
+
+   .card{
+    width: 290px;
+    height: 460px;
+  
+    align-items: center;
+    justify-content: flex-end;
+    
+   }
+   .description{
+    width: 100%;
+    height: 40%;
+    margin-top: -20px;
+    overflow-y: scroll;
+   }
+   .description h4{
+    
+    color: #121212;
+   }
+   .description p{
+    
+    color: #121212;
+    text-align: center;
+    font-size: 12px;
+
+   }
+   .img{
+    width: 75%;
+    height: 50%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 40px;
+    
+   }
+   .news-img{
+width: 80%;
+height: 90%;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+   }
+
+   .button{
+
+    bottom: -5px;
+    padding-bottom: 5px;
+    margin-top: 36px;
+    
+    
+   }
+
