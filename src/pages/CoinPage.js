@@ -37,6 +37,9 @@ function CoinPage() {
         fill: false,
         tension: 0.25,
         backgroundColor: "white",
+        pointHighlightStroke:"#55bae7",
+        pointHoverBackgroundColor: "#55bae7",
+        pointHoverBorderColor: "#55bae7",
         borderColor: "white",
         pointRadius: 0,
       },
@@ -126,6 +129,7 @@ function CoinPage() {
     });
   };
 
+
   const handleChange = async (event) => {
     setDays(event.target.value);
     const API_URL2 = `https://api.coingecko.com/api/v3/coins/${data.id}/market_chart?vs_currency=usd&days=${event.target.value}&interval=daily`;
@@ -162,7 +166,7 @@ function CoinPage() {
       ],
     });
   };
-
+console.log(data)
   return (
     <>
       {loading && loadingChart ? (
@@ -200,13 +204,23 @@ function CoinPage() {
                 </Select>
               </span>
               days
-            </p>
+            </p>{data.market_cap_rank}
+
             <LineChart chartData={chartData} options={options} />
+          </div>
+          <div className="coin1-page-div description2">
+          <ul className="box">
+  <li className="free">Market Cap Rank</li>
+  <li className="try">Rank</li>
+  <li className="start"><a href="#">{data.market_cap_rank}</a></li>
+</ul>
           </div>
           <div className="coin-page-div description">
             <h2>{data.name}</h2>
             <p dangerouslySetInnerHTML={{ __html: data.description.en }} />
           </div>
+          {/* sentiment_votes_down_percentage */}
+
         </>
       )}
     </>

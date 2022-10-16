@@ -5,10 +5,10 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import axios from 'axios';
-import "./styles.css";
+
 import Button from '../Button';
 
-const News = () => {
+const Test = () => {
     const [news ,settest] = useState([]);
 
     useEffect(()=>{
@@ -31,7 +31,7 @@ const News = () => {
             <div className='card'>
              {/* <div className='img'>   <img className='news-img' src={value.urlToImage} /></div> */}
              <div className='description1'>   <h4>{value.title}</h4>
-               <p>{value.description}</p>  </div>
+               <p>{value.slug}</p>  </div>
                <div className='button'><a href={value.url}>
                     <Button text="Read_Full_Article"/></a>  </div>           
             </div> 
@@ -45,4 +45,4 @@ const News = () => {
   )
 }
 
-export default News
+export default Test

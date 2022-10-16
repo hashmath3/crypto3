@@ -119,3 +119,198 @@ td {
     margin-bottom: 0.8rem;
   }
 }
+
+/* badge */
+@import url(https://fonts.googleapis.com/css?family=Jockey+One);
+
+
+
+.box{
+  margin:0 auto;
+  padding-top:1px;
+  position:relative;
+  text-align:center;  
+  z-index:1;
+
+}
+.box li{
+    list-style-type:none;
+    /*margin:0 auto;/**/
+}
+.free{
+  width:150px;
+  height:122px;
+  
+  background:#2D2F2E; 
+    /*
+http://www.workwithcolor.com/hsl-color-schemer-01.htm?q=252726,282A29,2A2D2B,2D2F2E,2F3230,313533,343736,363A38,393C3B,3B3F3D
+    */
+  background:-webkit-linear-gradient(90deg,#252726 0,#313533 59.3%,#3B3F3D 100%);
+  border-radius:75px;
+  box-shadow:3px 3px 10px  rgba(0,0,0,.8);
+  
+  color:#E5FEA5;
+  display:block;
+  font-size:30px;
+  font-family: 'Jockey One', serif;
+  letter-spacing:-1px;
+  margin:0;
+  padding-top:28px;
+  padding-bottom:0;
+  position:relative;
+  top:5px;
+  text-transform:uppercase;
+  z-index:2;
+    
+    opacity:1;
+}
+.try{
+  color:#fff;
+  font-family: Verdana;
+  font-size:11px;
+  letter-spacing:-1px;
+  background:#2D2F2E;
+  background:-webkit-linear-gradient(90deg,#252726 0,#313533 100%);
+  
+  border-radius:14px 14px 75px 75px;
+  height:89px;
+  margin:0 auto;
+  padding:0;
+  position:absolute;
+  top:67px;
+  width:150px;
+  z-index:3;
+     opacity:1;
+}
+.start{
+  color:#581B0C;
+  font-family: 'Jockey One', serif;
+  font-size:25px;
+  letter-spacing:-1px;
+  text-transform:uppercase;
+  
+  background:
+    /*-webkit-linear-gradient(90deg,rgba(0,0,0,.3) 0,rgba(192,67,32,0) 10%)0 39px,*/
+    -webkit-radial-gradient(ellipse closest-side, rgba(192,67,32,1) 50%, rgba(192,67,32,0) 50%)50% 62%;
+  background-size:320px 320px;
+  background-color:transparent;
+  
+  display:block;
+  height:40px;
+  left:-8px;
+  margin:0;
+  margin-top:10px;
+  overflow:hidden;
+  position:relative;
+  top:-48px;
+  width:165px;
+  z-index:4;
+    
+    opacity:1;
+}
+.start a{
+  color:inherit;
+  text-decoration:inherit;
+  display:block;
+  width:165px;
+  height:165px;
+  border-radius:82.5px;
+  border:0;
+  padding:0;
+  margin:0;
+    background:#C04320;
+  background:
+    -webkit-linear-gradient(0deg,rgba(0,0,0,.2) 0,rgba(192,67,32,0) 50px,rgba(192,67,32,0) 115px,rgba(0,0,0,.2) 165px),
+    -webkit-linear-gradient(90deg,rgba(0,0,0,.1) 0,rgba(192,67,32,0) 20px,rgba(192,67,32,0) 38px,rgba(255,255,255,.8) 39px,rgba(255,255,255,.1) 50px)0 141px;
+  position:absolute;
+  top:-102px;
+  line-height:241px;
+  text-shadow:1px 1px 1px rgba(255,255,255,.3);
+    z-index:5;
+    
+    opacity:1;
+}
+.free:before{
+    content:'.';
+    display:block;
+    height:0px;
+    border:10px solid transparent;
+    border-bottom-color:#021;
+    position:absolute;
+    top:67px;
+    left:-6px;
+    width:141px;
+    
+    opacity:1;
+}
+.free:after{
+    content:'.';
+    background:transparent;
+    background:
+       /* -webkit-linear-gradient(-55deg, #793532 17px, transparent 17px)-30px 19px,
+        -webkit-linear-gradient(55deg, #793532 17px, transparent 17px)-30px 19px,*/
+        -webkit-linear-gradient(
+    0deg,rgba(121,53,50,0) 0,rgba(0,0,0,1) 45px,rgba(0,0,0,1) 165px,rgba(121,53,50,0) 208px
+    /*,#793532 208px,#793532 234px*/
+    ,transparent 234px);
+    background-size:262px 38px;
+    color:#000;
+    overflow:hidden;
+    display:block;
+    height:38px;
+    position:absolute;
+    text-align:center;
+    top:77px;
+    left:-30px;
+    width:262px;
+    
+    opacity:1;
+}
+
+.box:before{
+    content:'';
+    display:block;
+    height:0px;
+    /*border:35px solid transparent;*/
+    border:0px solid transparent;
+    border-bottom:35px solid #793532;
+    position:absolute;
+    top:85px;
+    left:0;
+    width:225px;
+    
+    opacity:1;
+
+}
+/*
+.box:after{
+    content:'.';
+    display:block;
+    height:0px;
+    border:35px solid transparent;
+    border-top:25px solid #793532;
+    position:absolute;
+    top:83px;
+    left:-56px;
+    width:290px;
+    
+    opacity:1;
+
+}*/
+.try:before{
+    content:'';
+    width:150px;
+  height:150px;
+  border-radius:75px;
+  box-shadow:
+        inset 10px 12px 10px -10px rgba(255,255,255,.3),
+        inset 2px 3px 0 rgba(0,0,0,.3);
+  background:transparent; 
+  display:block;
+  margin:0;
+  padding:0;
+  position:absolute;
+  top:-61px;
+    
+    opacity:1;
+}

@@ -4,14 +4,16 @@ import Header from "../components/Header";
 import LandingPageComponent from "../components/HomePageComponents/LandingPageComponent";
 import News from "../components/News";
 import Newstitle from "../components/NewsTitle";
+import Test from "../components/Test";
 function Home() {
   return (
     <div>
-      <Header />
+       <Header />
        <LandingPageComponent /> 
       <Newstitle/>
-      <News/>
-      <Footer />
+      <News/> *
+      
+      {/* <Footer /> */}
     </div>
   );
 }
