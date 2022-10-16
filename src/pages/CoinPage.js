@@ -174,6 +174,13 @@ console.log(data)
       ) : (
         <>
           <Header />
+          <div className="description2">
+          <ul className="box">
+  <li className="free">Market Cap Rank</li>
+  <li className="try">Rank</li>
+  <li className="start"><a href="#">{data.market_cap_rank}</a></li>
+</ul>
+          </div>
           <div className="coin-page-div">
             <List coin={coin} />
           </div>
@@ -208,13 +215,7 @@ console.log(data)
 
             <LineChart chartData={chartData} options={options} />
           </div>
-          <div className="coin1-page-div description2">
-          <ul className="box">
-  <li className="free">Market Cap Rank</li>
-  <li className="try">Rank</li>
-  <li className="start"><a href="#">{data.market_cap_rank}</a></li>
-</ul>
-          </div>
+        
           <div className="coin-page-div description">
             <h2>{data.name}</h2>
             <p dangerouslySetInnerHTML={{ __html: data.description.en }} />
