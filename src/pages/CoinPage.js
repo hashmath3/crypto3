@@ -26,6 +26,11 @@ function CoinPage() {
         display: false,
       },
     },
+    responsive: true,
+    interaction: {
+      mode: "index",
+      intersect: false,
+    },
   };
 
   const [chartData, setChartData] = useState({
@@ -36,11 +41,8 @@ function CoinPage() {
         borderWidth: 2,
         fill: false,
         tension: 0.25,
-        backgroundColor: "white",
-        pointHighlightStroke:"#55bae7",
-        pointHoverBackgroundColor: "#55bae7",
-        pointHoverBorderColor: "#55bae7",
-        borderColor: "white",
+        backgroundColor: "#3a80e9",
+        borderColor: "#3a80e9",
         pointRadius: 0,
       },
     ],
@@ -106,8 +108,8 @@ function CoinPage() {
           borderWidth: 2,
           fill: false,
           tension: 0.25,
-          backgroundColor: "white",
-          borderColor: "white",
+          backgroundColor: "#111",
+          borderColor: "#3a80e9",
           pointRadius: 0,
         },
       ],
@@ -128,7 +130,6 @@ function CoinPage() {
       market_cap: response_data.data.market_data.market_cap.usd,
     });
   };
-
 
   const handleChange = async (event) => {
     setDays(event.target.value);
@@ -159,14 +160,14 @@ function CoinPage() {
           borderWidth: 2,
           fill: false,
           tension: 0.25,
-          backgroundColor: "white",
-          borderColor: "white",
+          backgroundColor: "#111",
+          borderColor: "#3a80e9",
           pointRadius: 0,
         },
       ],
     });
   };
-console.log(data)
+
   return (
     <>
       {loading && loadingChart ? (
@@ -175,12 +176,12 @@ console.log(data)
         <>
           <Header />
           <div className="description2">
-          <ul className="box">
-  <li className="free">Market Cap Rank</li>
-  <li className="try">Rank</li>
-  <li className="start"><a href="#">{data.market_cap_rank}</a></li>
-</ul>
-          </div>
+<ul className="box">
+<li className="free">Market Cap Rank</li>
+<li className="try">Rank</li>
+<li className="start"><a href="#">{data.market_cap_rank}</a></li>
+</ul> 
+</div>
           <div className="coin-page-div">
             <List coin={coin} />
           </div>
@@ -211,17 +212,13 @@ console.log(data)
                 </Select>
               </span>
               days
-            </p>{data.market_cap_rank}
-
+            </p>
             <LineChart chartData={chartData} options={options} />
           </div>
-        
           <div className="coin-page-div description">
             <h2>{data.name}</h2>
             <p dangerouslySetInnerHTML={{ __html: data.description.en }} />
           </div>
-          {/* sentiment_votes_down_percentage */}
-
         </>
       )}
     </>
@@ -229,3 +226,5 @@ console.log(data)
 }
 
 export default CoinPage;
+
+

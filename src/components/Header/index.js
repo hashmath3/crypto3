@@ -19,6 +19,9 @@ function Header() {
         <a href="/">
           <p className="links">Home</p>
         </a>
+        <a href="/compare">
+          <p className="links">Compare</p>
+        </a>
         <a href="/#card-news">
           <p className="links">Crypto News</p>
         </a>

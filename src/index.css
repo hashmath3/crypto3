@@ -118,6 +118,9 @@ td {
     margin-top: 0;
     margin-bottom: 0.8rem;
   }
+  .select-days {
+    max-width: 110px;
+  }
 }
 
 /* badge */
