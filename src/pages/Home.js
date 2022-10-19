@@ -10,9 +10,9 @@ function Home() {
     <div>
        <Header />
        <LandingPageComponent /> 
-      <Newstitle/>
+      {/* <Newstitle/>
       <News/> *
-       
+        */}
       {/* <Footer />  */}
     </div>
   );

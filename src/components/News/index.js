@@ -24,7 +24,7 @@ const News = () => {
     // }
 
     const getnews =async ()=>{
-      let response = await  axios.get(`https://cryptopanic.com/api/v1/posts/?auth_token=b0c5faf7f2ea0a46f1004415d014ac1c3ceeebcf` )
+      let response = await  axios.get(`https://cryptopanic.com/api/v1/posts/?auth_token=b0c5faf7f2ea0a46f1004415d014ac1c3ceeebcf&public=true`,{  mode: "no-cors"} )
         .then(response=> {console.log(response.data)
         settest(response.data.results)})
     .catch(error=>console.error(`Error: ${error}`))
@@ -38,7 +38,10 @@ const News = () => {
             <div className='card'>
              {/* <div className='img'>   <img className='news-img' src={value.urlToImage} /></div> */}
              <div className='description1'>   <h4>{value.title}</h4>
-               <p>{value.description}</p>  </div>
+               <p>{value.slug}</p>  </div>
+               <span> Source: <a href={value.source.domain} >   {value.source.title}</a>
+        {value.source.domain}
+               </span>
                <div className='button'><a href={value.url}>
                     <Button text="Read_Full_Article"/></a>  </div>           
             </div> 
