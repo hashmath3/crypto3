@@ -15,15 +15,22 @@ const News = () => {
         getnews()
 
     },[])
-    async function getnews(){ 
-      // http://api.mediastack.com/v1/news?access_key=15c6fac6ad7ae388cf5cbb296d533c0e&keywords=crypto & languages=en
-        const url ="https://cryptopanic.com/api/v1/posts/?auth_token=b0c5faf7f2ea0a46f1004415d014ac1c3ceeebcf&public=true"
-         const axiosresp =await axios.get(url);
-         console.log('axios data', axiosresp.data)
-         settest(axiosresp.data.results);
-    }
+    // async function getnews(){ 
+    //   // http://api.mediastack.com/v1/news?access_key=15c6fac6ad7ae388cf5cbb296d533c0e&keywords=crypto & languages=en
+    //     const url ="https://cryptopanic.com/api/v1/posts/?auth_token=b0c5faf7f2ea0a46f1004415d014ac1c3ceeebcf&public=true"
+    //      const axiosresp =await axios.get(url);
+    //      console.log('axios data', axiosresp.data)
+    //      settest(axiosresp.data.results);
+    // }
 
-  
+    const getnews =async ()=>{
+      let response = await  axios.get(`https://cryptopanic.com/api/v1/posts/?auth_token=b0c5faf7f2ea0a46f1004415d014ac1c3ceeebcf` )
+        .then(response=> {console.log(response.data)
+        settest(response.data.results)})
+    .catch(error=>console.error(`Error: ${error}`))
+    }
+    console.log("data",news)
+    
   return (
     <div className='container-card' id='card-news'>
     <div className='cards' >{ news.map((value)=>{

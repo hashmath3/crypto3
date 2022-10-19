@@ -10,10 +10,10 @@ function Home() {
     <div>
        <Header />
        <LandingPageComponent /> 
-      {/* <Newstitle/>
+      <Newstitle/>
       <News/> *
-       */}
-      {/* <Footer /> */}
+       
+      {/* <Footer />  */}
     </div>
   );
 }
