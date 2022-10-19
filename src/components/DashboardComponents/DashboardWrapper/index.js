@@ -50,8 +50,8 @@ function DashboardWrapper({ data }) {
           {data.length == 0 ? (
                 <p>No Crypto Currencies Found</p>
               ) : (
-                data.map((coin, i) => <Grid coin={coin} key={i} />)
-              )}
+                data.map((coin, i) => (<Grid coin={coin} key={i} delay={(i + 3) % 3}/>)
+              ))}
           </div>
         </TabPanel>
         <TabPanel value={1}>
@@ -59,7 +59,7 @@ function DashboardWrapper({ data }) {
             {data.length == 0 ? (
                 <p>No Crypto Currencies Found</p>
               ) : (
-                data.map((coin, i) => <List coin={coin} key={i} />)
+                data.map((coin, i) => (<List coin={coin} key={i} delay={(i + 7) % 7}/>))
               )}
             </table>
           </TabPanel>

@@ -211,3 +211,7 @@ z-index: -1;
     max-width: 50px;
   }
 }
+.grid-graph{
+  width: 10%;
+  height: 20%;
+}
