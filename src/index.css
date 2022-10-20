@@ -104,6 +104,28 @@ td {
   border-color: var(--white) !important;
 }
 
+.top-button {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+  color: var(--blue);
+  font-size: 2rem !important;
+  height: 3rem !important;
+  width: 3rem !important;
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: var(--darkgrey);
+}
+.toggle-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 2rem 0rem;
+}
+
 @media only screen and (max-width: 800px) {
   p {
     font-size: 80%;
@@ -120,6 +142,11 @@ td {
   }
   .select-days {
     max-width: 110px;
+  }
+  
+  .toggle-flex {
+    justify-content: flex-start;
+    margin: 1rem 0rem;
   }
 }
 

@@ -12,7 +12,7 @@
   transition: transfrom 500ms ease;
 }
 .coin-box:hover{
-  box-shadow: 4px 4px 15px#18978F;
+  box-shadow: 4px 4px 15px#61c96f;
   transition: all 0.3s ;
   cursor: pointer;
   transform: scale(1.05);
@@ -25,6 +25,39 @@
 }
 
 .coin-box:hover::after{
+
+  content: '';
+  box-sizing: 1rem;
+  color: blueviolet;
+}
+/* /////// */
+.box-red {
+  background-color: var(--darkgrey);
+  width: 300px;
+  height: 300px;
+  border-radius: 2.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 2rem;
+  cursor: pointer;
+  transition: transfrom 500ms ease;
+}
+.box-red:hover{
+  box-shadow: 4px 4px 15px#f94141;
+  transition: all 0.3s ;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.box-red:hover::before{
+  content: '';
+  position:absolute;
+
+  z-index: -1;
+}
+
+.box-red:hover::after{
 
   content: '';
   box-sizing: 1rem;
@@ -145,7 +178,6 @@
   /* height: 2px;
   left: 0;
   bottom: 0;
-
   width: 100%; */
   display: inline-block;
   width: 150px;
@@ -167,7 +199,6 @@ left: 0;
   left: 0;
   bottom: 0;
   
-
   width: 50%; */
   left: 0;
   display: inline-block;
@@ -187,6 +218,12 @@ z-index: -1;
   transform: scaleX(1) !important;
 }
 .coin-box:hover .price-red::after{
+  transform: scaleX(1) !important;
+}
+.box-red:hover .price::after{
+  transform: scaleX(1) !important;
+}
+.box-red:hover .price-red::after{
   transform: scaleX(1) !important;
 }
 

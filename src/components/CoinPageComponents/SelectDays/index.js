@@ -19,7 +19,7 @@ function SelectDays({ days, handleChange }) {
         },
         "&:hover": {
           "&& fieldset": {
-            borderColor: "#3a80e9",
+            borderColor: "#18978F",
           },
         },
       }}

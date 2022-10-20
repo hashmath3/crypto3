@@ -11,6 +11,7 @@ import { getDaysArray } from "../functions/getDaysArray";
 import { getPrices } from "../functions/getPrices";
 import { getPriorDate } from "../functions/getPriorDate";
 import { getCoinData } from "../functions/getCoinData";
+import ColorToggleButton from "../components/CoinPageComponents/Toggle";
 
 function CoinPage() {
   const [searchParams] = useSearchParams();
@@ -20,6 +21,7 @@ function CoinPage() {
   const [coin, setCoin] = useState({});
   const [days, setDays] = useState(30);
   const [prices, setPrices] = useState([]);
+  const [type, setType] = useState("prices");
   const today = new Date();
   const priorDate = new Date(new Date().setDate(today.getDate() - days));
 
@@ -72,7 +74,7 @@ function CoinPage() {
           fill: false,
           tension: 0.25,
           backgroundColor: "#111",
-          borderColor: "#18978F",
+          borderColor: "#3a80e9",
           pointRadius: 0,
         },
       ],
@@ -103,6 +105,8 @@ function CoinPage() {
       datasets: [
         {
           data: prices_data?.map((data) => data[1]),
+          backgroundColor: "#18978F",
+          borderColor: "#18978F",
         },
       ],
     });
@@ -115,20 +119,29 @@ function CoinPage() {
       ) : (
         <>
           <Header />
-          
- <div className="description2">
+          <div className="description2">
 <ul className="box">
 <li className="free">Market Cap Rank</li>
 <li className="try">Rank</li>
 <li className="start"><a href="#">{data.market_cap_rank}</a></li>
 </ul> 
-</div> 
+</div>
           <CoinPageList coin={coin} delay={2} />
           <div className="coin-page-div">
             <p style={{ margin: 0 }}>
               Price Change in the last
               <SelectDays days={days} handleChange={handleChange} />
             </p>
+            <div className="toggle-flex">
+              <ColorToggleButton
+                type={type}
+                setType={setType}
+                days={days}
+                chartData={chartData}
+                setChartData={setChartData}
+                id={data.id}
+              />
+            </div>
             <LineChart chartData={chartData} options={options} />
           </div>
           <CoinPageDesc name={data.name} desc={data.description.en} />

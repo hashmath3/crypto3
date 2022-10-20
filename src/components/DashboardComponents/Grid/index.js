@@ -8,7 +8,7 @@ import LineChart from "../LineChart";
 function Grid({ coin, delay } ,  chartData, options ) {
   return (
     <div
-      className="coin-box"
+      className={coin.price_change_percentage_24h > 0 ? "coin-box" : "box-red"}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
