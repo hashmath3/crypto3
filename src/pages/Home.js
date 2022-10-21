@@ -7,13 +7,13 @@ import Newstitle from "../components/NewsTitle";
 import Test from "../components/Test";
 function Home() {
   return (
-    <div>
+    <div style={{ minHeight: "100vh" }}>
        <Header />
        <LandingPageComponent /> 
       {/* <Newstitle/>
       <News/> *
         */}
-      {/* <Footer />  */}
+    <Footer />  
     </div>
   );
 }

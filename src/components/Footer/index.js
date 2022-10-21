@@ -1,25 +1,23 @@
-import axios from "axios";
+import React from "react";
 import styles from "./styles.css";
-import React, { useEffect, useState } from 'react'
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import EmailIcon from "@mui/icons-material/Email";
+import InsertLinkIcon from "@mui/icons-material/InsertLink";
+import TwitterIcon from "@mui/icons-material/Twitter";
 function Footer() {
-  const [news ,settest] = useState([]);
-
-  useEffect(()=>{
-      getnews()
-
-  },[])
-
-  async function getnews(){ 
-    // http://api.mediastack.com/v1/news?access_key=15c6fac6ad7ae388cf5cbb296d533c0e&keywords=crypto & languages=en
-      const url ="https://cryptopanic.com/api/v1/posts/?auth_token=b0c5faf7f2ea0a46f1004415d014ac1c3ceeebcf&public=true"
-       const axiosresp =await axios.get(url);
-       console.log('axios data', axiosresp.data);
-       settest(axiosresp.data.results);
-  }
-
-  return <div id="footer" className="footer-wrapper">
-    has
-  </div>;
+  return (
+    <div id="footer" className="footer-wrapper">
+      <h1 className="heading">CryptoTracker.</h1>
+      <div className="socials">
+        <InstagramIcon style={{ fontSize: "2rem" }} />
+        <FacebookIcon style={{ fontSize: "2rem" }} />
+        <TwitterIcon style={{ fontSize: "2rem" }} />
+        <EmailIcon style={{ fontSize: "2rem" }} />
+        <InsertLinkIcon style={{ fontSize: "2rem" }} />
+      </div>
+    </div>
+  );
 }
 
 export default Footer;

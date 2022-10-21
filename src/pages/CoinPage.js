@@ -12,6 +12,7 @@ import { getPrices } from "../functions/getPrices";
 import { getPriorDate } from "../functions/getPriorDate";
 import { getCoinData } from "../functions/getCoinData";
 import ColorToggleButton from "../components/CoinPageComponents/Toggle";
+import { convertNumbers } from "../functions/convertNumbers";
 
 function CoinPage() {
   const [searchParams] = useSearchParams();
@@ -51,6 +52,28 @@ function CoinPage() {
       mode: "index",
       intersect: false,
     },
+    scales: {
+      y: {
+        ticks:
+          type == "market_caps"
+            ? {
+                callback: function (value) {
+                  return "$" + convertNumbers(value);
+                },
+              }
+            : type == "total_volumes"
+            ? {
+                callback: function (value) {
+                  return convertNumbers(value);
+                },
+              }
+            : {
+                callback: function (value, index, ticks) {
+                  return "$" + value.toLocaleString();
+                },
+              },
+      },
+    },
   };
 
   useEffect(() => {
@@ -62,7 +85,7 @@ function CoinPage() {
   const getData = async () => {
     const response_data = await getCoinData(searchParams, true);
     setData(response_data);
-    const prices_data = await getPrices(response_data.id, days);
+    const prices_data = await getPrices(response_data.id, days, type);
     setPrices(prices_data);
     var dates = getDaysArray(priorDate, today);
     setChartData({
@@ -96,7 +119,7 @@ function CoinPage() {
 
   const handleChange = async (event) => {
     setDays(event.target.value);
-    const prices_data = await getPrices(data.id, event.target.value);
+    const prices_data = await getPrices(data.id, event.target.value, type);
     setPrices(prices_data);
     const priorDate = getPriorDate(event.target.value);
     var dates = getDaysArray(priorDate, today);
@@ -105,8 +128,6 @@ function CoinPage() {
       datasets: [
         {
           data: prices_data?.map((data) => data[1]),
-          backgroundColor: "#18978F",
-          borderColor: "#18978F",
         },
       ],
     });
@@ -125,7 +146,7 @@ function CoinPage() {
 <li className="try">Rank</li>
 <li className="start"><a href="#">{data.market_cap_rank}</a></li>
 </ul> 
-</div>
+</div> 
           <CoinPageList coin={coin} delay={2} />
           <div className="coin-page-div">
             <p style={{ margin: 0 }}>
