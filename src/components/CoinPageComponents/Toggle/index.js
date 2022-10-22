@@ -1,3 +1,4 @@
+
 import * as React from "react";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
@@ -59,11 +60,6 @@ export default function ColorToggleButton({
         datasets: [
           {
             data: prices_data?.map((data) => data[1]),
-            borderWidth: 2,
-            fill: false,
-            tension: 0.25,
-            backgroundColor: "#111",
-            borderColor: "#3a80e9",
           },
         ],
       });
